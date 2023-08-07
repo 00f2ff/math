@@ -1,0 +1,190 @@
+digraph prereqs {
+    /*
+    CMU math courses I think might be interesting to learn: 
+        http://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/#coursestext
+        contains more, but not listed in catalog: https://www.cmu.edu/math/grad/courses.html
+    
+    Visualized using https://dreampuf.github.io/GraphvizOnline
+    */
+    compound=true;
+    /*
+    Commented out edges are redundant due to prereq path
+    */
+    refresher [label="refresher"]
+    
+    n120 [label="21-120\nDifferential and Integral Calculus"]
+    refresher -> n120
+    
+    n122 [label="21-122\nIntegration and Approximation"]
+    n120 -> n122
+    
+    n127 [label="21-127\nConcepts of Mathematics\n(proofs)"]
+    n120 -> n127
+    
+    n228 [label="21-228\nDiscrete Mathematics"]
+    n127 -> n228
+    
+    n300 [label="21-300\nBasic Logic"]
+    n228 -> n300
+    
+    n302 [label="21-302\nLambda Calculus"]
+    n300 -> n302
+    
+    n242 [label="21-142\nMatrix Theory"]
+    n127 -> n242
+    
+    n269 [label="21-269\nVector Analysis\n(multidimensional calc)"]
+    n242 -> n269
+    
+    n261 [label="21-261\nIntroduction to Ordinary Differential Equations"]
+    n269 -> n261
+    
+    n325 [label="21-325\nProbability"]
+    n269 -> n325
+    
+    n329 [label="21-329\nSet Theory"]
+    n127 -> n329
+    
+    n373 [label="21-373\nAlgebraic Structures"]
+    // n127 -> n373
+    n242 -> n373
+    
+    n341 [label="21-341\nLinear Algebra"]
+    n373 -> n341
+    // n242 -> n341
+    
+    n455 [label="21-455\nIntermediate Real Analysis I"]
+    n269 -> n455
+    
+    n456 [label="21-456\nIntermediate Real Analysis II"]
+    n455 -> n456
+    
+    n301 [label="21-301\nCombinatorics"]
+    n122 -> n301
+    n228 -> n301
+    
+    n360 [label="21-360\nDifferential Geometry of Curves and Surfaces"]
+    // n269 -> n360
+    n456 -> n360
+    
+    n371 [label="21-371 Functions of a Complex Variable"]
+    n455 -> n371
+    // n269 -> n371
+    
+    n374 [label="21-374\nField Theory"]
+    n373 -> n374
+    
+    n380 [label="21-380\nIntroduction to Mathematical Modeling"]
+    n242 -> n380
+    n261 -> n380
+    
+    n400 [label="21-400\nIntermediate Logic"]
+    n300 -> n400
+    
+    n441 [label="21-441\nNumber Theory"]
+    // n242 -> n441
+    n373 -> n441
+    
+    n476 [label="21-476\nIntroduction to Dynamical Systems"]
+    // n242 -> n476
+    n261 -> n476
+    
+    n484 [label="21-484\nGraph Theory"]
+    n228 -> n484
+    n242 -> n484
+    
+    n620 [label="21-620\nReal Analysis"]
+    n127 -> n620
+    n122 -> n620
+    
+    n621 [label="21-621\nIntroduction to Lebesgue Integration"]
+    n620 -> n621
+    
+    
+    subgraph cluster_n373_n455 {
+        compound=true;
+        rankdir="TB";
+        edge[style=invis];
+        
+        n465 [label="21-465\nTopology"]
+
+        n602 [label="21-602\nIntroduction to Set Theory I"]
+    
+        n603 [label="21-603\nModel Theory I"]
+        
+        n604 [label="21-604\nIntroduction to Recursion Theory"]
+        
+        n610 [label="21-610\nAlgebra I"]
+        
+        n623 [label="21-623\nComplex Analysis"]
+        
+        n624 [label="21-624\nDescriptive Set Theory"]
+        
+        n630 [label="21-630\nOrdinary Differential Equations"]
+    
+        n632 [label="21-632\nIntroduction to Differential Equations"]
+        
+        n640 [label="21-640\nIntroduction to Functional Analysis"]
+        
+        n651 [label="21-651\nGeneral Topology"]
+        
+        n660 [label="21-660\nIntroduction to Numerical Analysis I"]
+        
+        n701 [label="21-701\nDiscrete Mathematics"]
+        
+        n720 [label="21-720\nMeasure and Integration"]
+        
+        n724 [label="21-724\nSobolev Spaces"]
+        
+        n732 [label="21-732\nPartial Differential Equations I"]
+        
+        n738 [label="21-738\nExtremal Combinatorics"]
+        
+        n742 [label="21-742\nCalculus Of Variations"]
+        
+        n759 [label="21-759\nDifferential Geometry"]
+        
+        n762 [label="21-762\nFinite Element Methods"]
+        
+        n880 [label="21-880\nStochastic Calculus"]
+        
+        n465 -> n602 -> n603 -> n604 -> n610 -> n623 -> n624 -> n630 -> n632 -> n640
+        n640 -> n651 -> n660 -> n701
+        n701 -> n720 -> n724 -> n732 -> n738 -> n742 -> n759 -> n762 -> n880
+        
+    }
+    
+    n455 -> n465 [lhead="cluster_n373_n455"]
+    n373 -> n465 [lhead="cluster_n373_n455"]
+    
+    n702 [label="21-702\nSet Theory II"]
+    n602 -> n702
+    
+    n703 [label="21-703\nModel Theory II"]
+    n603 -> n703
+    
+    n721 [label="21-721\nProbability"]
+    n720 -> n721
+    
+    n723 [label="21-723\nAdvanced Real Analysis"]
+    n720 -> n723
+    
+    n737 [label="21-737\nProbabilistic Combinatorics"]
+    n301 -> n737
+    n269 -> n737
+    
+    n752 [label="21-752\nAlgebraic Topology"]
+    n651 -> n752
+    
+    n770 [label="21-770\nIntroduction to Continuum Mechanics"]
+    n455 -> n770
+    n373 -> n770
+    n456 -> n770
+    
+    n803 [label="21-803\nModel Theory III"]
+    n703 -> n803
+    
+    n832 [label="21-832\nPartial Differential Equations II"]
+    n732 -> n832
+    
+}
