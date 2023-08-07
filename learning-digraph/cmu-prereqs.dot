@@ -4,12 +4,20 @@ digraph prereqs {
         http://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/#coursestext
         contains more, but not listed in catalog: https://www.cmu.edu/math/grad/courses.html
     
+    Focus is mostly on pure math rather than statistics, operations or finance
+    
     Visualized using https://dreampuf.github.io/GraphvizOnline
+    
+    Notes:
+        - Commented out edges are redundant due to prereq path
+    
+    Color scheme:
+        - Black / no fill: undergraduate
+        - PaleTurquoise: undergraduate => graduate transition (aka advanced undgrad math electives)
+        - MediumSpringGreen: graduate
+        - Moccasin: doctoral
     */
     compound=true;
-    /*
-    Commented out edges are redundant due to prereq path
-    */
     refresher [label="refresher"]
     
     n120 [label="21-120\nDifferential and Integral Calculus"]
@@ -59,19 +67,19 @@ digraph prereqs {
     n456 [label="21-456\nIntermediate Real Analysis II"]
     n455 -> n456
     
-    n301 [label="21-301\nCombinatorics"]
+    n301 [label="21-301\nCombinatorics", style=filled, fillcolor=PaleTurquoise]
     n122 -> n301
     n228 -> n301
     
-    n360 [label="21-360\nDifferential Geometry of Curves and Surfaces"]
+    n360 [label="21-360\nDifferential Geometry of Curves and Surfaces", style=filled, fillcolor=PaleTurquoise]
     // n269 -> n360
     n456 -> n360
     
-    n371 [label="21-371 Functions of a Complex Variable"]
+    n371 [label="21-371\nFunctions of a Complex Variable", style=filled, fillcolor=PaleTurquoise]
     n455 -> n371
     // n269 -> n371
     
-    n374 [label="21-374\nField Theory"]
+    n374 [label="21-374\nField Theory", style=filled, fillcolor=PaleTurquoise]
     n373 -> n374
     
     n380 [label="21-380\nIntroduction to Mathematical Modeling"]
@@ -81,23 +89,23 @@ digraph prereqs {
     n400 [label="21-400\nIntermediate Logic"]
     n300 -> n400
     
-    n441 [label="21-441\nNumber Theory"]
+    n441 [label="21-441\nNumber Theory", style=filled, fillcolor=PaleTurquoise]
     // n242 -> n441
     n373 -> n441
     
-    n476 [label="21-476\nIntroduction to Dynamical Systems"]
+    n476 [label="21-476\nIntroduction to Dynamical Systems", style=filled, fillcolor=PaleTurquoise]
     // n242 -> n476
     n261 -> n476
     
-    n484 [label="21-484\nGraph Theory"]
+    n484 [label="21-484\nGraph Theory", style=filled, fillcolor=PaleTurquoise]
     n228 -> n484
     n242 -> n484
     
-    n620 [label="21-620\nReal Analysis"]
+    n620 [label="21-620\nReal Analysis", style=filled, fillcolor=PaleTurquoise]
     n127 -> n620
     n122 -> n620
     
-    n621 [label="21-621\nIntroduction to Lebesgue Integration"]
+    n621 [label="21-621\nIntroduction to Lebesgue Integration", style=filled, fillcolor=PaleTurquoise]
     n620 -> n621
     
     
@@ -106,47 +114,47 @@ digraph prereqs {
         rankdir="TB";
         edge[style=invis];
         
-        n465 [label="21-465\nTopology"]
+        n465 [label="21-465\nTopology", style=filled, fillcolor=PaleTurquoise]
 
-        n602 [label="21-602\nIntroduction to Set Theory I"]
+        n602 [label="21-602\nIntroduction to Set Theory I", style=filled, fillcolor=PaleTurquoise]
     
-        n603 [label="21-603\nModel Theory I"]
+        n603 [label="21-603\nModel Theory I", style=filled, fillcolor=PaleTurquoise]
         
-        n604 [label="21-604\nIntroduction to Recursion Theory"]
+        n604 [label="21-604\nIntroduction to Recursion Theory", style=filled, fillcolor=MediumSpringGreen]
         
-        n610 [label="21-610\nAlgebra I"]
+        n610 [label="21-610\nAlgebra I", style=filled, fillcolor=PaleTurquoise]
         
-        n623 [label="21-623\nComplex Analysis"]
+        n623 [label="21-623\nComplex Analysis", style=filled, fillcolor=MediumSpringGreen]
         
-        n624 [label="21-624\nDescriptive Set Theory"]
+        n624 [label="21-624\nDescriptive Set Theory", style=filled, fillcolor=MediumSpringGreen]
         
-        n630 [label="21-630\nOrdinary Differential Equations"]
+        n630 [label="21-630\nOrdinary Differential Equations", style=filled, fillcolor=PaleTurquoise]
     
-        n632 [label="21-632\nIntroduction to Differential Equations"]
+        n632 [label="21-632\nIntroduction to Differential Equations", style=filled, fillcolor=PaleTurquoise]
         
-        n640 [label="21-640\nIntroduction to Functional Analysis"]
+        n640 [label="21-640\nIntroduction to Functional Analysis", style=filled, fillcolor=PaleTurquoise]
         
-        n651 [label="21-651\nGeneral Topology"]
+        n651 [label="21-651\nGeneral Topology", style=filled, fillcolor=PaleTurquoise]
         
-        n660 [label="21-660\nIntroduction to Numerical Analysis I"]
+        n660 [label="21-660\nIntroduction to Numerical Analysis I", style=filled, fillcolor=PaleTurquoise]
         
-        n701 [label="21-701\nDiscrete Mathematics"]
+        n701 [label="21-701\nDiscrete Mathematics", style=filled, fillcolor=PaleTurquoise]
         
-        n720 [label="21-720\nMeasure and Integration"]
+        n720 [label="21-720\nMeasure and Integration", style=filled, fillcolor=PaleTurquoise]
         
-        n724 [label="21-724\nSobolev Spaces"]
+        n724 [label="21-724\nSobolev Spaces", style=filled, fillcolor=MediumSpringGreen]
         
-        n732 [label="21-732\nPartial Differential Equations I"]
+        n732 [label="21-732\nPartial Differential Equations I", style=filled, fillcolor=MediumSpringGreen]
         
-        n738 [label="21-738\nExtremal Combinatorics"]
+        n738 [label="21-738\nExtremal Combinatorics", style=filled, fillcolor=PaleTurquoise]
         
-        n742 [label="21-742\nCalculus Of Variations"]
+        n742 [label="21-742\nCalculus Of Variations", style=filled, fillcolor=MediumSpringGreen]
         
-        n759 [label="21-759\nDifferential Geometry"]
+        n759 [label="21-759\nDifferential Geometry", style=filled, fillcolor=MediumSpringGreen]
         
-        n762 [label="21-762\nFinite Element Methods"]
+        n762 [label="21-762\nFinite Element Methods", style=filled, fillcolor=MediumSpringGreen]
         
-        n880 [label="21-880\nStochastic Calculus"]
+        n880 [label="21-880\nStochastic Calculus", style=filled, fillcolor=Moccasin]
         
         n465 -> n602 -> n603 -> n604 -> n610 -> n623 -> n624 -> n630 -> n632 -> n640
         n640 -> n651 -> n660 -> n701
@@ -157,34 +165,34 @@ digraph prereqs {
     n455 -> n465 [lhead="cluster_n373_n455"]
     n373 -> n465 [lhead="cluster_n373_n455"]
     
-    n702 [label="21-702\nSet Theory II"]
+    n702 [label="21-702\nSet Theory II", style=filled, fillcolor=MediumSpringGreen]
     n602 -> n702
     
-    n703 [label="21-703\nModel Theory II"]
+    n703 [label="21-703\nModel Theory II", style=filled, fillcolor=MediumSpringGreen]
     n603 -> n703
     
-    n721 [label="21-721\nProbability"]
+    n721 [label="21-721\nProbability", style=filled, fillcolor=PaleTurquoise]
     n720 -> n721
     
-    n723 [label="21-723\nAdvanced Real Analysis"]
+    n723 [label="21-723\nAdvanced Real Analysis", style=filled, fillcolor=PaleTurquoise]
     n720 -> n723
     
-    n737 [label="21-737\nProbabilistic Combinatorics"]
+    n737 [label="21-737\nProbabilistic Combinatorics", style=filled, fillcolor=PaleTurquoise]
     n301 -> n737
     n269 -> n737
     
-    n752 [label="21-752\nAlgebraic Topology"]
+    n752 [label="21-752\nAlgebraic Topology", style=filled, fillcolor=MediumSpringGreen]
     n651 -> n752
     
-    n770 [label="21-770\nIntroduction to Continuum Mechanics"]
+    n770 [label="21-770\nIntroduction to Continuum Mechanics", style=filled, fillcolor=MediumSpringGreen]
     n455 -> n770
     n373 -> n770
     n456 -> n770
     
-    n803 [label="21-803\nModel Theory III"]
+    n803 [label="21-803\nModel Theory III", style=filled, fillcolor=Moccasin]
     n703 -> n803
     
-    n832 [label="21-832\nPartial Differential Equations II"]
+    n832 [label="21-832\nPartial Differential Equations II", style=filled, fillcolor=Moccasin]
     n732 -> n832
     
 }
